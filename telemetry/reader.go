@@ -142,7 +142,7 @@ func Read(f io.Reader) (*TELEM, error) {
 					g := GPSU{}
 					err := g.Parse(value)
 					if err != nil {
-						return nil, err
+						continue
 					}
 					t.Time = g
 				} else if "ACCL" == label_string {
